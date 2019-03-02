@@ -1,0 +1,43 @@
+<mat-list *ngIf="hasSession">
+  <mat-divider *ngIf="longForm"></mat-divider>
+  <a mat-list-item (click)="togglePressed()" class="toggle-icon">
+    <mat-icon *ngIf="!longForm">skip_next</mat-icon>
+    <mat-icon *ngIf="longForm">skip_previous</mat-icon>
+    <p *ngIf="longForm" class="toggle-icon">Close</p>
+  </a>
+  <mat-divider></mat-divider>
+  <a mat-list-item (click)="createRecipeByHandPressed()">
+    <p *ngIf="longForm">Create Recipe by Hand</p>
+    <mat-icon mat-list-icon>add</mat-icon>
+  </a>
+  <a mat-list-item>
+    <p *ngIf="longForm">Create Recipe from Link</p>
+    <mat-icon mat-list-icon>link</mat-icon>
+  </a>
+  <a mat-list-item>
+    <p *ngIf="longForm">Create a Meal Plan</p>
+    <mat-icon mat-list-icon>local_dining</mat-icon>
+  </a>
+  <mat-divider></mat-divider>
+  <a mat-list-item (click)="cookbookPressed()">
+    <p *ngIf="longForm">Cookbook</p>
+    <mat-icon mat-list-icon>book</mat-icon>
+  </a>
+  <a mat-list-item>
+    <p *ngIf="longForm">Explore</p>
+    <mat-icon mat-list-icon>explore</mat-icon>
+  </a>
+  <a mat-list-item>
+    <p *ngIf="longForm">Shopping Lists</p>
+    <mat-icon mat-list-icon>shopping_cart</mat-icon>
+  </a>
+  <mat-divider></mat-divider>
+  <a mat-list-item (click)="settingsPressed()">
+    <p *ngIf="longForm">Settings</p>
+    <mat-icon mat-list-icon>settings</mat-icon>
+  </a>
+  <a mat-list-item (click)="logoutPressed()">
+    <p *ngIf="longForm">Log Out</p>
+    <mat-icon mat-list-icon>exit_to_app</mat-icon>
+  </a>
+</mat-list>

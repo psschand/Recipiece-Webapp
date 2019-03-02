@@ -1,0 +1,28 @@
+.login-container {
+  display: flex;
+  justify-content: center;
+}
+
+.button-container {
+  margin-top: 20px;
+}
+
+mat-form-field {
+  width: 400px;
+
+  @media only screen and (max-width: 400px) {
+    width: 80%;
+  }
+}
+
+.button-container {
+  button {
+    margin-right: 12px;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  form {
+    padding: 24px;
+  }
+}

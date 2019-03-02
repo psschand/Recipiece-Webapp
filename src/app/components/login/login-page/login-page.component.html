@@ -1,0 +1,53 @@
+<div class="login-container">
+  <form>
+    <h2>Login</h2>
+    <mat-form-field>
+      <input
+        matInput
+        type="text"
+        name="username"
+        placeholder="Username or Email"
+        (ngModelChange)="usernameChanged()"
+        [(ngModel)]="username">
+      <div class="form-error" *ngIf="showLoginError">
+        The provided credentials do not exist on the server
+      </div>
+    </mat-form-field>
+
+    <br/>
+
+    <mat-form-field>
+      <input
+        matInput
+        type="password"
+        name="password"
+        placeholder="Password"
+        (ngModelChange)="passwordChanged()"
+        [(ngModel)]="password">
+      <div class="form-error" *ngIf="showLoginError">
+        The provided credentials do not exist on the server
+      </div>
+    </mat-form-field>
+
+    <br/>
+
+    <mat-checkbox
+      class="remember-login"
+      name="remember-login"
+      [(ngModel)]="stayLoggedIn">
+      Remember Me
+    </mat-checkbox>
+
+    <div class="button-container">
+      <button
+        mat-flat-button
+        color="primary"
+        (click)="loginPressed()">
+        Login
+      </button>
+      <button mat-button routerLink="/login/create-account">
+        I don't have an account
+      </button>
+    </div>
+  </form>
+</div>

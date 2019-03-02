@@ -1,0 +1,20 @@
+<mat-toolbar color="primary">
+  <span>Recipiece</span>
+  <mat-form-field *ngIf="showSearchBar">
+    <mat-icon matPrefix>search</mat-icon>
+    <input
+      type="text"
+      matInput
+      [(ngModel)]="searchQuery"
+      (input)="searchQueryChanged()" />
+  </mat-form-field>
+  <!--<span>-->
+  <!--<button *ngIf="users.token && users.userId" mat-icon-button (click)="onLogoutPressed($event)">-->
+  <button
+    mat-icon-button
+    (click)="logoutUserPressed()">
+    <mat-icon>exit_to_app</mat-icon>
+  </button>
+  <!--</button>-->
+  <!--</span>-->
+</mat-toolbar>

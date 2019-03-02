@@ -1,0 +1,81 @@
+<div class="login-container">
+  <div class="create-account-content">
+    <h2>Create an Account</h2>
+    <form>
+      <mat-form-field>
+        <input
+          name="create-username"
+          matInput
+          placeholder="Username"
+          (input)="usernameChanged()"
+          [(ngModel)]="username">
+        <div class="form-error" *ngIf="showNameConflictError">
+          A user with this name already exists.
+        </div>
+        <div class="form-error" *ngIf="showNameLenError">
+          Your username must be longer than 4 characters.
+        </div>
+        <div class="form-error" *ngIf="showInvalidUsernameError">
+          A username cannot include special characters.
+        </div>
+      </mat-form-field>
+      <br/>
+      <mat-form-field>
+        <input
+          name="create-email"
+          matInput
+          type="email"
+          placeholder="Email"
+          (input)="emailChanged()"
+          [(ngModel)]="email">
+        <div class="form-error" *ngIf="showInvalidEmailError">
+          Enter a valid email address.
+        </div>
+        <div class="form-error" *ngIf="showEmailConflictError">
+          A user with this name already exists.
+        </div>
+      </mat-form-field>
+      <br/>
+      <mat-form-field>
+        <input
+          name="create-password"
+          matInput
+          [(ngModel)]="password"
+          type="password"
+          (input)="passwordChanged()"
+          placeholder="Password">
+        <div class="form-error" *ngIf="showPasswordLenError">
+          You password must be more than 6 characters long.
+        </div>
+      </mat-form-field>
+      <br/>
+      <mat-form-field>
+        <input
+          name="confirm-password"
+          matInput
+          [(ngModel)]="confirmPassword"
+          type="password"
+          (input)="passwordChanged()"
+          placeholder="Confirm Password">
+        <div class="form-error" *ngIf="showPasswordMismatchError">
+          You passwords must match.
+        </div>
+      </mat-form-field>
+      <br/>
+      <mat-checkbox
+        name="remember-login"
+        [(ngModel)]="stayLoggedIn">
+        Remember Me
+      </mat-checkbox>
+      <div class="button-container">
+        <button
+          color="primary"
+          mat-flat-button
+          (click)="createAccountPressed()">
+          Create Account
+        </button>
+        <button mat-button routerLink="/login">I already have an account</button>
+      </div>
+    </form>
+  </div>
+</div>

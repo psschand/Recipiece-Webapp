@@ -1,0 +1,19 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav mode="side" #sidenav [(opened)]="opened">
+    <app-sidebar-user-profile></app-sidebar-user-profile>
+    <app-sidebar-list
+      [longForm]="true"
+      (navToggled)="toggleNavbar()">
+    </app-sidebar-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <!-- TODO -- *ngIf="!opened && hasSession()"-->
+    <div *ngIf="!opened" class="sidenav-mini">
+      <app-sidebar-list
+        [longForm]="false"
+        (navToggled)="toggleNavbar()">
+      </app-sidebar-list>
+    </div>
+    <ng-content></ng-content>
+  </mat-sidenav-content>
+</mat-sidenav-container>
