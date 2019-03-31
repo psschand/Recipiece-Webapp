@@ -1,0 +1,19 @@
+.ingredient-config-container {
+  display: flex;
+  flex-direction: row;
+   &> * {
+     flex-basis: 32%;
+   }
+
+  .delete-ingredient-button {
+    flex-basis: 4%;
+  }
+
+  mat-form-field {
+    margin-right: 12px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}

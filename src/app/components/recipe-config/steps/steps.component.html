@@ -1,0 +1,39 @@
+<div>
+  <div>
+    <button
+      mat-flat-button
+      color="primary"
+      (click)="addStepPressed()">
+      Add Step
+    </button>
+  </div>
+
+  <form #stepsForm="ngForm">
+    <div class="steps-entry-container">
+      <div
+        [matBadge]="index + 1"
+        *ngFor="let step of recipe.steps; let index = index; trackBy: trackByFcn">
+        <mat-form-field>
+        <textarea
+          placeholder="Instruction"
+          [(ngModel)]="step"
+          matInput
+          required
+          [name]="'step' + index">
+        </textarea>
+        </mat-form-field>
+        <button
+          (click)="removeStepPressed(index)"
+          mat-icon-button>
+          <mat-icon>delete</mat-icon>
+        </button>
+      </div>
+    </div>
+  </form>
+
+  <!--<button-->
+    <!--mat-button-->
+    <!--matStepperPrevious>-->
+    <!--Previous-->
+  <!--</button>-->
+</div>

@@ -1,0 +1,30 @@
+<div>
+  <div>
+    <button
+      mat-flat-button
+      color="primary"
+      (click)="addIngredientPressed()">
+      Add Ingredient
+    </button>
+  </div>
+  <div class="ingredient-entry-grid">
+    <app-ingredient-entry
+      *ngFor="let ingredient of recipe.ingredients; let index = index; trackBy: trackByFcn"
+      [ingredient]="ingredient"
+      (validityChanged)="handleFormValidityChanged($event)"
+      (deleteIngredientPressed)="handleDeleteIngredientPressed($event)"
+      [index]="index">
+    </app-ingredient-entry>
+  </div>
+  <!--<button-->
+    <!--mat-button-->
+    <!--matStepperPrevious>-->
+    <!--Previous-->
+  <!--</button>-->
+  <!--<button-->
+    <!--[disabled]="!isValid"-->
+    <!--mat-button-->
+    <!--matStepperNext>-->
+    <!--Next-->
+  <!--</button>-->
+</div>

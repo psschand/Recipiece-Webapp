@@ -16,6 +16,7 @@
     "@angular/common": "^7.2.7",
     "@angular/compiler": "^7.2.7",
     "@angular/core": "^7.2.7",
+    "@angular/flex-layout": "^7.0.0-beta.23",
     "@angular/forms": "^7.2.7",
     "@angular/http": "^7.2.7",
     "@angular/material": "^7.3.3",
@@ -24,6 +25,7 @@
     "@angular/router": "^7.2.7",
     "core-js": "^2.6.5",
     "ngx-logger": "^3.3.11",
+    "recipiece-common": "^1.0.4",
     "rxjs": "~6.4.0",
     "tslib": "^1.9.0",
     "zone.js": "~0.8.26"

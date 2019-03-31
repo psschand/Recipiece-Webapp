@@ -1,12 +1,12 @@
 import {Component, OnInit} from '@angular/core';
 import {UsersService} from '../../../services/users/users.service';
-import {IUser} from '../../../classes/models';
 import {take} from 'rxjs/operators';
 import {Router} from '@angular/router';
 import {Constants} from '../../../classes/constants';
 import {HttpErrorResponse} from '@angular/common/http';
 import {UserPreferencesService} from '../../../services/user-preferences/user-preferences.service';
 import {NGXLogger} from 'ngx-logger';
+import {IUser} from 'recipiece-common';
 
 @Component({
   selector: 'app-create-account-page',
@@ -60,7 +60,7 @@ export class CreateAccountPageComponent implements OnInit {
   }
 
   public createAccountPressed() {
-    const user: IUser = {
+    const user: Partial<IUser>  = {
       name: this.username,
       email: this.email,
       password: this.password,

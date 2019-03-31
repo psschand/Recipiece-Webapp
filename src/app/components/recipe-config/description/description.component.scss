@@ -1,0 +1,27 @@
+.description-container {
+  display: flex;
+  flex-direction: column;
+
+  &> .row {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+  }
+}
+
+.name-input-container {
+  flex-grow: 1;
+   &> * {
+     width: 100%;
+   }
+}
+
+.private-input-container {
+  flex-grow: 0;
+  height: 24px;
+  padding-top: 26px;
+  padding-left: 6px;
+  &> * {
+    width: 100%;
+  }
+}

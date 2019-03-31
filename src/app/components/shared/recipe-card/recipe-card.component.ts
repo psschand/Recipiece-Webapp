@@ -1,10 +1,10 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {IRecipe} from '../../../classes/models';
+import {IRecipe} from 'recipiece-common';
 
 @Component({
   selector: 'app-recipe-card',
   templateUrl: './recipe-card.component.html',
-  styleUrls: ['./recipe-card.component.scss']
+  styleUrls: ['./recipe-card.component.scss'],
 })
 export class RecipeCardComponent implements OnInit {
   @Input() recipe: IRecipe;
@@ -12,7 +12,11 @@ export class RecipeCardComponent implements OnInit {
   @Output() viewPressed: EventEmitter<IRecipe>;
   @Output() deletePressed: EventEmitter<IRecipe>;
 
-  constructor() { }
+  constructor() {
+    this.editPressed = new EventEmitter();
+    this.viewPressed = new EventEmitter();
+    this.deletePressed = new EventEmitter();
+  }
 
   ngOnInit() {
   }

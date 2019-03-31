@@ -1,7 +1,7 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {SidebarComponent} from './sidebar.component';
-import {MatDividerModule, MatIconModule, MatListModule, MatSidenavModule} from '@angular/material';
+import {MatButtonModule, MatDividerModule, MatIconModule, MatListModule, MatSidenavModule} from '@angular/material';
 import {SidebarListComponent} from './sidebar-list/sidebar-list.component';
 import {SidebarUserProfileComponent} from './sidebar-user-profile/sidebar-user-profile.component';
 
@@ -12,6 +12,7 @@ import {SidebarUserProfileComponent} from './sidebar-user-profile/sidebar-user-p
     MatIconModule,
     MatDividerModule,
     MatListModule,
+    MatButtonModule,
   ],
   declarations: [
     SidebarComponent,

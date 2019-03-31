@@ -1,0 +1,27 @@
+<mat-card class="recipe-card">
+  <mat-card-header>
+    <mat-card-title>{{ recipe.name }}</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <p class="recipe-description">
+      {{ recipe.description }}
+    </p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button
+      mat-icon-button
+      (click)="deletePressed.emit(recipe)">
+      <mat-icon>delete</mat-icon>
+    </button>
+    <button
+      mat-icon-button
+      (click)="viewPressed.emit(recipe)">
+      <mat-icon>visibility</mat-icon>
+    </button>
+    <button
+      mat-icon-button
+      (click)="editPressed.emit(recipe)">
+      <mat-icon>edit</mat-icon>
+    </button>
+  </mat-card-actions>
+</mat-card>

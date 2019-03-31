@@ -22,6 +22,7 @@ class ApiUrls {
 
   public static readonly RECIPES = `${ApiUrls.ROOT}/recipes`;
   public static readonly CREATE_RECIPE = `${ApiUrls.RECIPES}/`;
+  public static readonly GET_RECIPES = `${ApiUrls.RECIPES}/all`;
 }
 
 class Regexes {

@@ -1,0 +1,45 @@
+<form #descriptionForm="ngForm">
+  <div class="description-container">
+    <div class="row">
+      <div class="name-input-container">
+        <mat-form-field>
+          <input
+            [(ngModel)]="recipe.name"
+            type="text"
+            name="recipe-name"
+            placeholder="Recipe Name"
+            (change)="nameChanged()"
+            required
+            matInput/>
+        </mat-form-field>
+      </div>
+      <div class="private-input-container">
+        <mat-checkbox
+          name="recipe-private"
+          (change)="privateChanged()"
+          [(ngModel)]="recipe.isPrivate">
+          Make Recipe Private
+        </mat-checkbox>
+      </div>
+    </div>
+
+    <mat-form-field>
+      <textarea
+        matInput
+        placeholder="Description"
+        name="recipe-description"
+        (change)="descriptionChanged()"
+        required
+        [(ngModel)]="recipe.description">
+      </textarea>
+    </mat-form-field>
+  </div>
+</form>
+<!--<div>-->
+  <!--<button-->
+    <!--[disabled]="!descriptionForm.valid"-->
+    <!--mat-button-->
+    <!--matStepperNext>-->
+    <!--Next-->
+  <!--</button>-->
+<!--</div>-->

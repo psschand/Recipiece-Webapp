@@ -1,0 +1,44 @@
+<form #ingredientsForm="ngForm">
+  <div
+    [matBadge]="index + 1"
+    class="ingredient-config-container">
+    <mat-form-field>
+      <input
+        [name]="getIngredientFieldName('ingredient-name')"
+        placeholder="Name"
+        type="text"
+        [(ngModel)]="ingredient.name"
+        (ngModelChange)="handleModelChanged()"
+        required
+        matInput/>
+    </mat-form-field>
+    <mat-form-field>
+      <input
+        [name]="getIngredientFieldName('ingredient-amount')"
+        type="text"
+        placeholder="Amount"
+        [(ngModel)]="ingredient.amount"
+        [pattern]="ingredientAmountPattern"
+        (ngModelChange)="handleModelChanged()"
+        required
+        matInput/>
+    </mat-form-field>
+    <mat-form-field>
+      <input
+        placeholder="Measurement"
+        [(ngModel)]="ingredient.measure"
+        [name]="getIngredientFieldName('ingredient-measure')"
+        (ngModelChange)="handleModelChanged()"
+        type="text"
+        required
+        matInput/>
+    </mat-form-field>
+    <div class="delete-ingredient-button">
+      <button
+        mat-icon-button
+        (click)="deleteIngredient()">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </div>
+  </div>
+</form>

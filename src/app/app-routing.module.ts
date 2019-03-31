@@ -16,7 +16,7 @@ export const APP_ROUTES: Routes = [
   },
   {
     path: Constants.ROUTES.RECIPE_CONFIG,
-    loadChildren: './components/settings/settings.module#RecipeConfigModule',
+    loadChildren: './components/recipe-config/recipe-config.module#RecipeConfigModule',
     canActivate: [LoginGuard],
   },
   {

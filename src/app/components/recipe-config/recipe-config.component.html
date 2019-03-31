@@ -1,0 +1,40 @@
+<div class="config-container">
+  <h1>Create your Recipe</h1>
+  <div class="form-container">
+    <mat-accordion>
+      <mat-expansion-panel *ngIf="fromUrl">
+        <mat-expansion-panel-header>
+          Import From
+        </mat-expansion-panel-header>
+        <app-url-entry></app-url-entry>
+      </mat-expansion-panel>
+
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          Description
+        </mat-expansion-panel-header>
+        <app-description [(recipe)]="recipe"></app-description>
+      </mat-expansion-panel>
+
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          Ingredients
+        </mat-expansion-panel-header>
+        <app-ingredients [(recipe)]="recipe"></app-ingredients>
+      </mat-expansion-panel>
+
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          Steps
+        </mat-expansion-panel-header>
+        <app-steps [(recipe)]="recipe"></app-steps>
+      </mat-expansion-panel>
+    </mat-accordion>
+  </div>
+  <button
+    (click)="saveRecipe()"
+    mat-raised-button
+    color="primary">
+    Save
+  </button>
+</div>

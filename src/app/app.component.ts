@@ -4,14 +4,19 @@ import {UserPreferencesService} from './services/user-preferences/user-preferenc
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit {
-  title = 'recipiece-frontend';
+  public sidenavOpen: boolean;
 
   constructor(
-    private prefsService: UserPreferencesService
+    private prefsService: UserPreferencesService,
   ) {
+    this.sidenavOpen = this.prefsService.hasSession;
+  }
+
+  public toggleSidenav() {
+    this.sidenavOpen = !this.sidenavOpen;
   }
 
   ngOnInit(): void {

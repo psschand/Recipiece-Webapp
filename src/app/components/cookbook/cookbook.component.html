@@ -1,3 +1,22 @@
-<p>
-  cookbook works!
-</p>
+<div *ngIf="!loading">
+  <mat-paginator
+    *ngIf="recipes.length > 0"
+    [length]="recipes.length"
+    (page)="fetchRecipesForPage($event)"
+    [pageSize]="25">
+  </mat-paginator>
+  <div
+    *ngIf="recipes.length > 0"
+    class="cards-grid">
+
+  </div>
+  <div
+    class="no-recipes-text"
+    *ngIf="recipes.length === 0">
+    <p>
+      You don't have any recipes.
+      You can create some by using the options in the side menu.
+    </p>
+  </div>
+</div>
+<app-loading-bar *ngIf="loading"></app-loading-bar>

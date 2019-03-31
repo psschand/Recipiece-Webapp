@@ -1,0 +1,11 @@
+.recipe-card {
+  width: 456px;
+  height: 256px;
+}
+
+.recipe-description {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 200px;
+}

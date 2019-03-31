@@ -1,4 +1,5 @@
 import {Injectable} from '@angular/core';
+import {isNullOrUndefined} from '../../classes/utilities';
 
 export type UserTheme = 'dark-theme' | 'light-theme';
 
@@ -66,12 +67,20 @@ export class UserPreferencesService {
   }
 
   public get hasSession(): boolean {
-    return !!this.persistentStorage.getItem(PREFERENCE_KEY_TOKEN) || !!this.transientStorage.getItem(PREFERENCE_KEY_TOKEN);
+    return !isNullOrUndefined(this.persistentStorage.getItem(PREFERENCE_KEY_TOKEN)) ||
+      !isNullOrUndefined(this.transientStorage.getItem(PREFERENCE_KEY_TOKEN));
   }
 
   constructor() {
     this.persistentStorage = localStorage;
     this.transientStorage = sessionStorage;
+  }
+
+  public logoutUser() {
+    const handler = this.persistant ? this.persistentStorage : this.transientStorage;
+    handler.removeItem(PREFERENCE_KEY_TOKEN);
+    handler.removeItem(PREFERENCE_KEY_USER_ID);
+    handler.removeItem(PREFERENCE_KEY_THEME);
   }
 
 }
